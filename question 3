@@ -1,0 +1,24 @@
+class Father():
+    def property(self):
+        print("Father's property")
+    
+    def business(self):
+        print("Father's business")
+
+class Son(Father):
+    def study(self):
+        print("Son's study")
+
+class Daughter(Father):
+    def study(self):
+        print("Daughter's study")
+
+class Grandchild(Son, Daughter):
+    def gaming(self):
+        print("Grandchild's gaming") 
+
+g = Grandchild()
+g.property()
+g.business()    
+g.study()
+g.gaming()
