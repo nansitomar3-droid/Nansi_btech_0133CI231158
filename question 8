@@ -1,0 +1,26 @@
+import json
+
+students = [
+    {"name": "Rahul", "age": 20, "city": "Bhopal", "marks": 85},
+    {"name": "Priya", "age": 21, "city": "Indore", "marks": 70},
+    {"name": "Sneha", "age": 22, "city": "Pune", "marks": 92}
+]
+
+
+file = open("students.json", "w")
+json.dump(students, file, indent=4)
+file.close()
+
+
+try:
+    file = open("students.json", "r")
+    data = json.load(file)
+
+    for student in data:
+        if student["marks"] > 75:
+            print(student)
+
+    file.close()
+
+except FileNotFoundError:
+    print("File Not Found")
