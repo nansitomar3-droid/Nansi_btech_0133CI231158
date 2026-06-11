@@ -1,0 +1,20 @@
+try:
+    with open("report.txt", "w") as f:
+        f.write("""Rahul-85
+Priya-90
+Rohan-78
+Sneha-92
+Amit-65""")
+
+    with open("report.txt", "r") as f:
+        for line in f:
+            name, marks = line.strip().split("-")
+
+            if int(marks) > 80:
+                print(name, marks)
+
+except FileNotFoundError:
+    print("File Not Found")
+
+finally:
+    print("Process Completed")
